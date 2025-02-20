@@ -11,7 +11,7 @@
                 <button onclick="makeChoicePaper()">Paper</button>
                 <button onclick="makeChoiceScissors()">Scissors</button>
             </div>
-            <div>
+            <div id="choiceSecFull">
                 <div class="choiceSec">
                     <h2 id="choice-el">choice 1</h2>
                     <button onclick="removeChoice1()"class="xBtn" id="xbtn1-el">X</button>
@@ -25,7 +25,7 @@
                 <h2 id = "versus-el">VS</h2>
                 <div id="gameButtons">
                     <button id="continueBtn" onclick="cont()">Continue</button>
-                    <button id="newGameBtn">New Game</button>
+                    <button id="newGameBtn" onclick="newGame()">New Game</button>
                 </div>
             </div>
             <div id="npcChoice">
@@ -35,7 +35,7 @@
         </div>
         <div id="bottomSection">
             <h3>Lives: </h3>
-            <h3 id="lives-el">0</h3>
+            <h3 id="lives-el">3</h3>
             <h3>Points: </h3>
             <h3 id="points-el">0</h3>
         </div>

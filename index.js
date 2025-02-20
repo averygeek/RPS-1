@@ -31,6 +31,10 @@ function removeChoice1() {
         setChoice()
     } else {
         finalChoice = player.choice2
+        choiceEl.textContent = finalChoice
+        choice2El.textContent = ""
+        xbtn1El.hidden = true
+        xbtn2El.hidden = true
     }
 }
 
@@ -40,6 +44,10 @@ function removeChoice2() {
     setChoice()
     } else {
         finalChoice = player.choice1
+        choiceEl.textContent = finalChoice
+        choice2El.textContent = ""
+        xbtn1El.hidden = true
+        xbtn2El.hidden = true
     }
 }
 
@@ -108,22 +116,21 @@ function npc(){
 }
 
 function cont() {
-    if (continued === false) {
+    if (continued === false && continued2 === false) {
         if (player.choice1 && player.choice2 !== "") {
             xbtn1El.style.backgroundColor = "green"
             xbtn2El.style.backgroundColor = "green"
             continued = true
+            npc()
         }
-        npc()
     } else if (continued === true && finalChoice !== "") {
 
         npcChoiceEl.textContent = npcDropChoice
         npcChoice2El.textContent = ""
         choiceEl.textContent = finalChoice
         choice2El.textContent = ""
+        continued = false
         continued2 = true
-        xbtn1El.hidden = true
-        xbtn2El.hidden = true
         if (finalChoice === npcDropChoice) {
             versusEl.textContent = "TIE"
         }
@@ -148,23 +155,39 @@ function cont() {
         livesEl.textContent = player.lives
         pointsEl.textContent = player.points
     } 
-    // else if (continued2 === true){
-    //     resetGame()     
-    // }
+    else if (continued2 === true && player.lives>0){
+        resetGame()     
+    } else if (continued2 === true) {
+        newGame()
+    }
 }
 
-// function resetGame() {
-//         xbtn1El.style.backgroundColor = "rgb(242, 79, 79)"
-//         xbtn2El.style.backgroundColor = "green"
-//         xbtn1El.hidden = false
-//         xbtn2El.hidden = false
-//         npcChoiceNum = []
-//         npcChoice = []
-//         continued = false
-//         continued2 = false
-//         finalChoice = ""
-//         npcDropChoice = ""
-// }
+function resetGame() {
+        xbtn1El.hidden = false
+        xbtn2El.hidden = false
+        xbtn1El.style.backgroundColor = "rgb(242, 79, 79)"
+        xbtn2El.style.backgroundColor = "rgb(242, 79, 79)"
+        npcChoiceNum = []
+        npcChoice = []
+        continued = false
+        continued2 = false
+        finalChoice = ""
+        npcDropChoice = ""
+        player.choice1 = ""
+        player.choice2 = ""
+        choiceEl.textContent= "choice 1"
+        choice2El.textContent= "choice 2"
+        npcChoiceEl.textContent = "Npc Choice 1"
+        npcChoice2El.textContent = "Npc Choice 2"
+        versusEl.textContent = "VS"
+}
 
+function newGame(){
+    resetGame()
+    player.lives = 3
+    player.points = 0
+    livesEl.textContent = player.lives
+    pointsEl.textContent = player.points
+}
 
 // choiceEl.textContent=playerChoice[0]
