@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>RPS -1</h1>
+        <div class="midsection">
+            <div id="buttons">
+                <button onclick="makeChoiceRock()">Rock</button>
+                <button onclick="makeChoicePaper()">Paper</button>
+                <button onclick="makeChoiceScissors()">Scissors</button>
+            </div>
+            <div>
+                <div class="choiceSec">
+                    <h2 id="choice-el">choice 1</h2>
+                    <button onclick="removeChoice1()"class="xBtn" id="xbtn1-el">X</button>
+                </div>
+                <div class="choiceSec">
+                    <h2 id="choice2-el">choice 2</h2>
+                    <button onclick="removeChoice2()" class="xBtn" id="xbtn2-el">X</button>
+                </div>
+            </div>
+            <div id="versus">
+                <h2 id = "versus-el">VS</h2>
+                <div id="gameButtons">
+                    <button id="continueBtn" onclick="cont()">Continue</button>
+                    <button id="newGameBtn">New Game</button>
+                </div>
+            </div>
+            <div id="npcChoice">
+                <h2 id="npc-choice-el">npc choice 1</h2>
+                <h2 id="npc-choice2-el">npc choice 2</h2>
+            </div>
+        </div>
+        <div id="bottomSection">
+            <h3>Lives: </h3>
+            <h3 id="lives-el">0</h3>
+            <h3>Points: </h3>
+            <h3 id="points-el">0</h3>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>

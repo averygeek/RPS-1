@@ -1,0 +1,71 @@
+body {
+    background-color: black;
+    color: white;
+}
+h1 {
+    width: 50vw;
+    text-align: center;
+    /* border: 2px dotted red; */
+}
+.midsection {
+    display: flex;
+    justify-content: center;
+    width: 40vw;
+    /* border: 2px dotted blue; */
+}
+
+#buttons {
+    width: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 20px;
+    background-color: rgb(65, 65, 65);
+    padding: 5px;
+}
+
+#gameButtons{
+    display: flex;
+    flex-direction: column;
+}
+
+#newGameBtn {
+    margin: 5px;
+}
+
+#bottomSection {
+    display: flex;
+}
+
+#versus{
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    justify-content: center;
+    align-items: center;
+}
+
+#npcChoice {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h3 {
+    margin-right: 10px;
+}
+
+.choiceSec {
+    display: flex;
+}
+
+.xBtn {
+    height: 15px;
+    width: 15px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgb(242, 79, 79);
+    font-size: 7px;
+    text-align: center;
+    
+}
